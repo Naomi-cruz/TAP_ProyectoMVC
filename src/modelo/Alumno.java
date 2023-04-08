@@ -3,9 +3,9 @@ package modelo;
 public class Alumno {
     private int numControl;
     private String nombre;
-    private Especialidad especialidad;
+    private int especialidad;
 
-    public Alumno(int numControl, String nombre, Especialidad especialidad) {
+    public Alumno(int numControl, String nombre, int especialidad) {
         this.numControl = numControl;
         this.nombre = nombre;
         this.especialidad = especialidad;
@@ -29,10 +29,10 @@ public class Alumno {
         this.nombre = nombre;
     }
 
-    public Especialidad getEspecialidad() {
+    public int getEspecialidad() {
         return especialidad;
     }
-    public void setEspecialidad(Especialidad especialidad) {
+    public void setEspecialidad(int especialidad) {
         this.especialidad = especialidad;
     }
 

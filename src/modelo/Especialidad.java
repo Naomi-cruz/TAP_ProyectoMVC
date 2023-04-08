@@ -1,5 +1,7 @@
 package modelo;
 
+import java.util.ArrayList;
+
 public class Especialidad {
     private int id;
     private String nombre;

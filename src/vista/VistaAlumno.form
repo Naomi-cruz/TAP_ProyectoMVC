@@ -24,6 +24,18 @@
               <columns value="10"/>
             </properties>
           </component>
+          <component id="2a92" class="javax.swing.JLabel" binding="lblEspecialidad">
+            <constraints/>
+            <properties>
+              <text value="id de la especialidad:"/>
+            </properties>
+          </component>
+          <component id="88863" class="javax.swing.JTextField" binding="txfEspecialidad">
+            <constraints/>
+            <properties>
+              <columns value="6"/>
+            </properties>
+          </component>
         </children>
       </grid>
       <grid id="64702" binding="panelSur" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
@@ -41,12 +53,6 @@
             <constraints/>
             <properties>
               <text value="Limpiar"/>
-            </properties>
-          </component>
-          <component id="86f15" class="javax.swing.JButton" binding="menuButton">
-            <constraints/>
-            <properties>
-              <text value="Menú"/>
             </properties>
           </component>
           <component id="3ddd6" class="javax.swing.JButton" binding="salirButton" default-binding="true">

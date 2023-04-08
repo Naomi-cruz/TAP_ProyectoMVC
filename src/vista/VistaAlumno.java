@@ -11,17 +11,18 @@ public class VistaAlumno extends JFrame{
     public JTextField txfNombre;
     public JButton guardarButton;
     public JButton limpiarButton;
-    public JButton menuButton;
     private JPanel panelSur;
     private JPanel panelNorte;
     public JButton salirButton;
+    public JTextField txfEspecialidad;
+    private JLabel lblEspecialidad;
 
     public VistaAlumno(){
         setTitle("Alumnos");
         setContentPane(panelPrincipal);
         setSize(500,140);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setVisible(true);
     }
 

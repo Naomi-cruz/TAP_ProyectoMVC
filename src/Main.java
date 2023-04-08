@@ -1,6 +1,8 @@
 import controlador.ControladorAlumno;
+import controlador.ControladorGrupo;
 import modelo.*;
 import vista.VistaAlumno;
+import vista.VistaGrupo;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,11 +15,11 @@ public class Main {
 
     public static BufferedReader data = new BufferedReader(new InputStreamReader(System.in));
     public static BufferedReader dataString = new BufferedReader(new InputStreamReader(System.in));
-    public static ArrayList<Alumno> alumnos = new ArrayList<Alumno>();
+    //public static ArrayList<Alumno> alumnos = new ArrayList<Alumno>();
     public static ArrayList<Especialidad> especialidades = new ArrayList<Especialidad>();
     public static ArrayList<Materia> materias = new ArrayList<Materia>();
     public static ArrayList<Catedratico> catedraticos = new ArrayList<Catedratico>();
-    public static ArrayList<Grupo> grupos = new ArrayList<Grupo>();
+    //public static ArrayList<Grupo> grupos = new ArrayList<Grupo>();
 
     public static void main(String[] args) throws IOException {
         int opc=0;
@@ -42,10 +44,13 @@ public class Main {
                     altaMateria();
                     break;
                 case 5:
-                    altaGrupo();
+                    Grupo grupo = new Grupo();
+                    VistaGrupo vistag = new VistaGrupo();
+                    ControladorGrupo controladorg = new ControladorGrupo(grupo,vistag);
+                    //altaGrupo();
                     break;
                 case 6:
-                    listarBD();
+                    //listarBD();
                     break;
                 case 7:
                     out.println("\nAdios");
@@ -97,7 +102,7 @@ public class Main {
         materias.add(new Materia(id,nombre));
     }
 
-    public static void altaGrupo() throws IOException {
+   /* public static void altaGrupo() throws IOException {
         out.println("Clave: ");
         String clave = dataString.readLine();
         out.println("Hora: ");
@@ -105,9 +110,9 @@ public class Main {
         out.println("Salon: ");
         int salon = Integer.parseInt(data.readLine());
         grupos.add(new Grupo(clave,hora,salon));
-    }
+    }*/
 
-    public static void listarBD(){
+    /*public static void listarBD(){
         for (int i=0; i<especialidades.size(); i++){
             out.println(especialidades.get(i).toString());
         }
@@ -137,5 +142,5 @@ public class Main {
         out.println("id Especialidad: ");
         int idEspecialidad = Integer.parseInt(data.readLine());
         alumnos.add(new Alumno(numControl,nombre,especialidades.get(idEspecialidad-1)));
-    }
+    }*/
 }
