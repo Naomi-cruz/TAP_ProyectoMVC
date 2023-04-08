@@ -31,6 +31,6 @@ public class Catedratico {
 
     @Override
     public String toString() {
-        return "Catedratico{" + "RFC=" + RFC + ", nombre=" + nombre + '}';
+        return "Catedratico{" + "RFC = " + RFC + ", Nombre = " + nombre + '}';
     }
 }

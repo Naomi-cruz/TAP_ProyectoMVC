@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="vista.VistaMateria">
+  <grid id="27dc6" binding="panelPrincipal" layout-manager="BorderLayout" hgap="0" vgap="0">
+    <constraints>
+      <xy x="20" y="20" width="500" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <grid id="f9832" binding="panelNorte" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+        <constraints border-constraint="North"/>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="9db24" class="javax.swing.JLabel" binding="lblaidi">
+            <constraints/>
+            <properties>
+              <text value="id de la materia: "/>
+            </properties>
+          </component>
+          <component id="edf83" class="javax.swing.JTextField" binding="txfid">
+            <constraints/>
+            <properties>
+              <columns value="5"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="a03f8" binding="panelSur" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+        <constraints border-constraint="South"/>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="5e591" class="javax.swing.JButton" binding="guardarButton" default-binding="true">
+            <constraints/>
+            <properties>
+              <text value="Guardar"/>
+            </properties>
+          </component>
+          <component id="bd449" class="javax.swing.JButton" binding="limpiarButton" default-binding="true">
+            <constraints/>
+            <properties>
+              <text value="Limpiar"/>
+            </properties>
+          </component>
+          <component id="7c607" class="javax.swing.JButton" binding="salirButton" default-binding="true">
+            <constraints/>
+            <properties>
+              <text value="Salir"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="1ecd7" binding="panelCentral" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+        <constraints border-constraint="Center"/>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="9afb2" class="javax.swing.JLabel" binding="lblMateria">
+            <constraints/>
+            <properties>
+              <text value="Materia"/>
+            </properties>
+          </component>
+          <component id="d929b" class="javax.swing.JTextField" binding="txfMateria">
+            <constraints/>
+            <properties>
+              <columns value="10"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>

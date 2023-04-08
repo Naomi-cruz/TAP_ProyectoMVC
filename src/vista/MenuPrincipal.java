@@ -1,22 +1,17 @@
 package vista;
 
-import controlador.ControladorAlumno;
-import controlador.ControladorEspecialidad;
-import controlador.ControladorGrupo;
-import modelo.Alumno;
-import modelo.Especialidad;
-import modelo.Grupo;
+import controlador.*;
+import modelo.*;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import static controlador.ControladorAlumno.alumnos;
+import static controlador.ControladorCatedratico.catedraticos;
 import static controlador.ControladorEspecialidad.especialidades;
 import static controlador.ControladorGrupo.grupos;
-
-
-
+import static controlador.ControladorMateria.materias;
 
 public class MenuPrincipal extends JFrame {
     private JMenuBar barraMenu;
@@ -24,10 +19,12 @@ public class MenuPrincipal extends JFrame {
     private JMenuItem itemGrupo;
     private JMenuItem itemAlumno;
     private JMenuItem itemEspecialidad;
+    private JMenuItem itemCatedratico;
+    private JMenuItem itemMateria;
 
     private  JMenuItem itemMostrar;
 
-
+    private JButton btn1;
 
     public static void listarBD1(){
         for (int i=0; i<especialidades.size(); i++){
@@ -42,7 +39,16 @@ public class MenuPrincipal extends JFrame {
         for (int i=0; i<grupos.size(); i++){
             System.out.println(grupos.get(i).toString());
         }
+
+        for (int i=0; i<catedraticos.size(); i++){
+            System.out.println(catedraticos.get(i).toString());
+        }
+
+        for (int i=0; i<materias.size(); i++){
+            System.out.println(materias.get(i).toString());
+        }
     }
+
 
     public MenuPrincipal() {
         super("Base de datos: Proyecto Escolar");
@@ -94,15 +100,41 @@ public class MenuPrincipal extends JFrame {
             }
         });
 
+        itemCatedratico = new JMenuItem("Catedratico");
+        itemCatedratico.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("\n----------- Catedraticos registrados ---------");
+                Catedratico alumno = new Catedratico();
+                VistaCatedratico vista = new VistaCatedratico();
+                ControladorCatedratico controladorc = new ControladorCatedratico(alumno,vista);
+            }
+        });
+
+        itemMateria = new JMenuItem("Materia");
+        itemMateria.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("\n----------- Materias registrados ---------");
+                Materia materia = new Materia();
+                VistaMateria vista = new VistaMateria();
+                ControladorMateria controlador = new ControladorMateria(materia,vista);
+            }
+        });
+
 
 
         menuPrincipal.add(itemGrupo);
         menuPrincipal.add(itemAlumno);
         menuPrincipal.add(itemEspecialidad);
         menuPrincipal.add(itemMostrar);
+        menuPrincipal.add(itemCatedratico);
+        menuPrincipal.add(itemMateria);
+
 
         barraMenu.add(menuPrincipal);
         this.setJMenuBar(barraMenu);
+
 
         setVisible(true);
 
