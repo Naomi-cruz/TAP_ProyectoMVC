@@ -1,7 +1,11 @@
-import vista.MenuPrincipal;
+import controlador.ControladorMenuGUI;
+import vista.MenuPrincipalGUI;
 
 public class maintester {
     public static void main(String[] args) {
-        MenuPrincipal p = new MenuPrincipal();
+
+
+        MenuPrincipalGUI p = new MenuPrincipalGUI();
+       ControladorMenuGUI gui = new ControladorMenuGUI(p);
     }
 }

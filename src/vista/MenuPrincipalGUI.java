@@ -1,9 +1,9 @@
 package vista;
 
+import javax.swing.*;
 import controlador.*;
 import modelo.*;
 
-import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -12,8 +12,12 @@ import static controlador.ControladorCatedratico.catedraticos;
 import static controlador.ControladorEspecialidad.especialidades;
 import static controlador.ControladorGrupo.grupos;
 import static controlador.ControladorMateria.materias;
-
-public class MenuPrincipal extends JFrame {
+public class MenuPrincipalGUI extends JFrame{
+    private JPanel panelPrincipal;
+    private JPanel panelCentral;
+    public JButton salirButton;
+    public JButton mostrarButton;
+    private JPanel panelSur;
     private JMenuBar barraMenu;
     private JMenu menuPrincipal;
     private JMenuItem itemGrupo;
@@ -26,35 +30,15 @@ public class MenuPrincipal extends JFrame {
 
     private JButton btn1;
 
-    public static void listarBD1(){
-        for (int i=0; i<especialidades.size(); i++){
-            System.out.println(especialidades.get(i).toString());
-
-        }
-
-        for (int i=0; i<alumnos.size(); i++){
-            System.out.println(alumnos.get(i).toString());
-        }
-
-        for (int i=0; i<grupos.size(); i++){
-            System.out.println(grupos.get(i).toString());
-        }
-
-        for (int i=0; i<catedraticos.size(); i++){
-            System.out.println(catedraticos.get(i).toString());
-        }
-
-        for (int i=0; i<materias.size(); i++){
-            System.out.println(materias.get(i).toString());
-        }
-    }
 
 
-    public MenuPrincipal() {
+
+    public MenuPrincipalGUI() {
         super("Base de datos: Proyecto Escolar");
+        setContentPane(panelPrincipal);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(400, 350);
-        setLocation(400, 250);
+        setSize(300, 300);
+        setLocation(500, 250);
 
         barraMenu = new JMenuBar();
         menuPrincipal = new JMenu("-Opciones-");
@@ -91,15 +75,6 @@ public class MenuPrincipal extends JFrame {
             }
         });
 
-        itemMostrar = new JMenuItem("Mostrar listado de base de datos");
-        itemMostrar.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("\n----------- Base de datos ---------");
-                listarBD1();
-            }
-        });
-
         itemCatedratico = new JMenuItem("Catedratico");
         itemCatedratico.addActionListener(new ActionListener() {
             @Override
@@ -127,7 +102,6 @@ public class MenuPrincipal extends JFrame {
         menuPrincipal.add(itemGrupo);
         menuPrincipal.add(itemAlumno);
         menuPrincipal.add(itemEspecialidad);
-        menuPrincipal.add(itemMostrar);
         menuPrincipal.add(itemCatedratico);
         menuPrincipal.add(itemMateria);
 
