@@ -4,13 +4,14 @@ import modelo.Especialidad;
 import modelo.Materia;
 import vista.VistaMateria;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class ControladorMateria implements ActionListener {
+import static modelo.Materia.materias;
 
-    public static ArrayList<Materia> materias = new ArrayList<Materia>();
+public class ControladorMateria implements ActionListener {
 
     public final Materia materia;
     public final VistaMateria vista;
@@ -29,15 +30,19 @@ public class ControladorMateria implements ActionListener {
             limpiar();
         }
         if (this.vista.guardarButton == e.getSource()){
+            if (Materia.buscarMateriaID(Integer.parseInt(vista.txfid.getText())) == false) {
 
-            materia.setId_materia(Integer.parseInt(vista.txfid.getText()));
-            materia.setNombre(vista.txfMateria.getText());
+                materia.setId_materia(Integer.parseInt(vista.txfid.getText()));
+                materia.setNombre(vista.txfMateria.getText());
 
-            int id = Integer.parseInt(vista.txfid.getText());
-            String nombre = vista.txfMateria.getText();
+                int id = Integer.parseInt(vista.txfid.getText());
+                String nombre = vista.txfMateria.getText();
 
-            materias.add(new Materia(id,nombre));
-            System.out.println(materia);
+                materias.add(new Materia(id, nombre));
+                System.out.println(materia);
+            } else {
+                JOptionPane.showMessageDialog(vista,"El id ya esta asociado a otra materia","Accion invalida",0);
+            }
         }
 
         if (this.vista.salirButton == e.getSource()){

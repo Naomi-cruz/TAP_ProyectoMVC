@@ -4,13 +4,16 @@ import modelo.Alumno;
 import modelo.Especialidad;
 import vista.VistaEspecialidad;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import static modelo.Especialidad.especialidades;
+
 
 public class ControladorEspecialidad implements ActionListener {
-    public static ArrayList<Especialidad> especialidades = new ArrayList<Especialidad>();
+
 
     private final Especialidad especialidad;
     private final VistaEspecialidad vista;
@@ -30,15 +33,21 @@ public class ControladorEspecialidad implements ActionListener {
         if(this.vista.limpiarButton == e.getSource()){
             limpiar();
         }
-        if (this.vista.guardarButton == e.getSource()){
-            especialidad.setId(Integer.parseInt(vista.txfId.getText()));
-            especialidad.setNombre((vista.jtfEspecialidad.getText()));
 
-            int id = Integer.parseInt(vista.txfId.getText());
-            String nombre = vista.jtfEspecialidad.getText();
-            especialidades.add(new Especialidad(id,nombre));
-            System.out.println(especialidad);
-        }
+            if (this.vista.guardarButton == e.getSource()) {
+                if (Especialidad.buscarEspecialidadID(Integer.parseInt(vista.txfId.getText())) == false) {
+                    especialidad.setId(Integer.parseInt(vista.txfId.getText()));
+                    especialidad.setNombre((vista.jtfEspecialidad.getText()));
+
+                    int id = Integer.parseInt(vista.txfId.getText());
+                    String nombre = vista.jtfEspecialidad.getText();
+                    especialidades.add(new Especialidad(id, nombre));
+                    System.out.println(especialidad);
+                    Especialidad.buscarEspecialidadID(id);
+                } else {
+                    JOptionPane.showMessageDialog(vista,"El id ya esta asociado a otra especialidad","Accion invalida",0);
+                }
+            }
 
         if (this.vista.salirButton == e.getSource()){
             salir();

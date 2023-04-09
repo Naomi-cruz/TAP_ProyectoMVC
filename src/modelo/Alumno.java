@@ -1,6 +1,9 @@
 package modelo;
 
+import java.util.ArrayList;
+
 public class Alumno {
+    public static ArrayList<Alumno> alumnos = new ArrayList<Alumno>();
     private int numControl;
     private String nombre;
     private int especialidad;
@@ -41,5 +44,20 @@ public class Alumno {
     }
     public void imprimir(){
         System.out.println(toString());
+    }
+
+    public static boolean buscarAlumnonumdecontrol(int n_id) {
+        String id = String.valueOf(n_id);
+        for (Alumno alumno : alumnos) {
+            if (String.valueOf(alumno.getNumControl()).equals(id))
+            {
+                //System.out.println("Este id ya existe: " + esp.getId());
+                return true;
+            }else{
+                //System.out.println("Este id aun no existe");
+                return false;
+            }
+        }
+        return false;
     }
 }

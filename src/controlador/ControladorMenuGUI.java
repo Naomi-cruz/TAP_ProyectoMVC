@@ -6,11 +6,12 @@ import vista.MenuPrincipalGUI;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import static controlador.ControladorAlumno.alumnos;
 import static controlador.ControladorCatedratico.catedraticos;
-import static controlador.ControladorEspecialidad.especialidades;
-import static controlador.ControladorGrupo.grupos;
-import static controlador.ControladorMateria.materias;
+
+import static modelo.Alumno.alumnos;
+import static modelo.Especialidad.especialidades;
+import static modelo.Grupo.grupos;
+import static modelo.Materia.materias;
 
 public class ControladorMenuGUI implements ActionListener {
 

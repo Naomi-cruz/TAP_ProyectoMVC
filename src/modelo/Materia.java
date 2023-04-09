@@ -1,6 +1,11 @@
 package modelo;
 
+import java.util.ArrayList;
+
+
 public class Materia {
+    public static ArrayList<Materia> materias = new ArrayList<Materia>();
+
     private int id_materia;
     private String nombre;
 
@@ -30,5 +35,20 @@ public class Materia {
     @Override
     public String toString(){
         return "Materia{" + "Id: "+ id_materia+ ", nombre: "+ nombre + "}";
+    }
+
+    public static boolean buscarMateriaID(int n_id) {
+        String id = String.valueOf(n_id);
+        for (Materia mat : materias) {
+            if (String.valueOf(mat.getId_materia()).equals(id))
+            {
+                //System.out.println("Este id ya existe: " + esp.getId());
+                return true;
+            }else{
+                //System.out.println("Este id aun no existe");
+                return false;
+            }
+        }
+        return false;
     }
 }

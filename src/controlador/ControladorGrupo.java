@@ -1,14 +1,17 @@
 package controlador;
 
+import modelo.Especialidad;
 import modelo.Grupo;
 import vista.VistaGrupo;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import static modelo.Grupo.grupos;
+
 public class ControladorGrupo implements ActionListener {
-    public static ArrayList<Grupo> grupos = new ArrayList<Grupo>();
 
     private final Grupo grupo;
     private final VistaGrupo vista;
@@ -28,15 +31,19 @@ public class ControladorGrupo implements ActionListener {
         }
 
         if (this.vista.guardarButton == e.getSource()){
-            grupo.setHora(Integer.parseInt(vista.txfHora.getText()));
-            grupo.setClave((vista.txfClave.getText()));
-            grupo.setSalon(Integer.parseInt(vista.txfSalon.getText()));
-            String clave = vista.txfClave.getText();
-            int hora = Integer.parseInt(vista.txfHora.getText());
-            int salon = Integer.parseInt(vista.txfSalon.getText());
-            grupos.add(new Grupo(clave,hora,salon));
+            if (Grupo.buscarGrupo(Integer.parseInt(vista.txfSalon.getText()),Integer.parseInt(vista.txfHora.getText())) == false) {
+                grupo.setHora(Integer.parseInt(vista.txfHora.getText()));
+                grupo.setClave((vista.txfClave.getText()));
+                grupo.setSalon(Integer.parseInt(vista.txfSalon.getText()));
+                String clave = vista.txfClave.getText();
+                int hora = Integer.parseInt(vista.txfHora.getText());
+                int salon = Integer.parseInt(vista.txfSalon.getText());
+                grupos.add(new Grupo(clave, hora, salon));
 
-            System.out.println(grupo);
+                System.out.println(grupo);
+            } else {
+                JOptionPane.showMessageDialog(vista,"Salon no disponible","Accion invalida",0);
+            }
         }
 
         if (this.vista.salirButton == e.getSource()){

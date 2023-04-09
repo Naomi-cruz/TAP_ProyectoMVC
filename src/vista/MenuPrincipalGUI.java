@@ -7,11 +7,6 @@ import modelo.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import static controlador.ControladorAlumno.alumnos;
-import static controlador.ControladorCatedratico.catedraticos;
-import static controlador.ControladorEspecialidad.especialidades;
-import static controlador.ControladorGrupo.grupos;
-import static controlador.ControladorMateria.materias;
 public class MenuPrincipalGUI extends JFrame{
     private JPanel panelPrincipal;
     private JPanel panelCentral;
@@ -26,22 +21,15 @@ public class MenuPrincipalGUI extends JFrame{
     private JMenuItem itemCatedratico;
     private JMenuItem itemMateria;
 
-    private  JMenuItem itemMostrar;
-
-    private JButton btn1;
-
-
-
-
     public MenuPrincipalGUI() {
-        super("Base de datos: Proyecto Escolar");
+        super("BD: Proyecto Escolar");
         setContentPane(panelPrincipal);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(300, 300);
+        setSize(300, 240);
         setLocation(500, 250);
 
         barraMenu = new JMenuBar();
-        menuPrincipal = new JMenu("-Opciones-");
+        menuPrincipal = new JMenu("-Opciones de registro-");
         itemGrupo = new JMenuItem("Grupo");
         itemGrupo.addActionListener(new ActionListener() {
             @Override
@@ -97,18 +85,14 @@ public class MenuPrincipalGUI extends JFrame{
             }
         });
 
-
-
         menuPrincipal.add(itemGrupo);
         menuPrincipal.add(itemAlumno);
         menuPrincipal.add(itemEspecialidad);
         menuPrincipal.add(itemCatedratico);
         menuPrincipal.add(itemMateria);
 
-
         barraMenu.add(menuPrincipal);
         this.setJMenuBar(barraMenu);
-
 
         setVisible(true);
 

@@ -1,6 +1,9 @@
 package modelo;
 
+import java.util.ArrayList;
+
 public class Grupo {
+    public static ArrayList<Grupo> grupos = new ArrayList<Grupo>();
     private String clave;
     private Materia materia;
     private Catedratico catedratico;
@@ -42,5 +45,29 @@ public class Grupo {
     }
     public void imprimir(){
         System.out.println(toString());
+    }
+
+    public static boolean buscarGrupo(int n_salon, int s_hora) {
+        String num_salon = String.valueOf(n_salon);
+        String horario = String.valueOf(s_hora);
+        for (Grupo grup : grupos) {
+            if (String.valueOf(grup.getHora()).equals(horario) && String.valueOf(grup.getSalon()).equals(num_salon))
+            {
+                //System.out.println("Este id ya existe: " + esp.getId());
+                return true;
+            }else{
+                //System.out.println("Este id aun no existe");
+                return false;
+            }
+        }
+        return false;
+    }
+
+    public Catedratico getCatedratico() {
+        return catedratico;
+    }
+
+    public void setCatedratico(Catedratico catedratico) {
+        this.catedratico = catedratico;
     }
 }
