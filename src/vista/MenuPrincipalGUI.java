@@ -4,6 +4,7 @@ import javax.swing.*;
 import controlador.*;
 import modelo.*;
 
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -21,20 +22,34 @@ public class MenuPrincipalGUI extends JFrame{
     private JMenuItem itemCatedratico;
     private JMenuItem itemMateria;
 
-    public MenuPrincipalGUI() {
+    //cosas que se agregaron
+
+    private JMenu nuevo;
+    private JMenuItem itemDardealta;
+    private JMenu grupo;
+
+   public MenuPrincipalGUI() {
         super("BD: Proyecto Escolar");
+
         setContentPane(panelPrincipal);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(300, 240);
+        setSize(300, 260);
         setLocation(500, 250);
+
+
 
         barraMenu = new JMenuBar();
         menuPrincipal = new JMenu("-Opciones de registro-");
-        itemGrupo = new JMenuItem("Grupo");
+        menuPrincipal.setBackground(Color.blue);
+
+        itemGrupo = new JMenuItem("Grupo alta");
+        nuevo = new JMenu("Grupo");
+
+        nuevo.add(itemGrupo);
         itemGrupo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("\n----------- Grupos registrados ---------");
+                System.out.println("\n----------- Grupos ---------");
                 Grupo grupo = new Grupo();
                 VistaGrupo vistag = new VistaGrupo();
                 ControladorGrupo controladorg = new ControladorGrupo(grupo,vistag);
@@ -45,18 +60,30 @@ public class MenuPrincipalGUI extends JFrame{
         itemAlumno.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("\n----------- Alumnos registrados ---------");
+                System.out.println("\n----------- Alumnos  ---------");
                 Alumno alumno = new Alumno();
                 VistaAlumno vista = new VistaAlumno();
                 ControladorAlumno controlador = new ControladorAlumno(alumno,vista);
             }
         });
 
+        itemDardealta = new JMenuItem("Asignacion alumno");
+        nuevo.add(itemDardealta);
+
+       itemDardealta.addActionListener(new ActionListener() {
+           @Override
+           public void actionPerformed(ActionEvent e) {
+               System.out.println("\n---------- ---------");
+               MenuAlumnoalta menualta = new MenuAlumnoalta();
+               ControladorMenuAlumnoalta vistag = new ControladorMenuAlumnoalta(menualta);
+           }
+       });
+
         itemEspecialidad = new JMenuItem("Especialidad");
         itemEspecialidad.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("\n----------- Especialidades registrados ---------");
+                System.out.println("\n----------- Especialidades ---------");
                 Especialidad especialidad = new Especialidad();
                 VistaEspecialidad vista = new VistaEspecialidad();
                 ControladorEspecialidad controlador = new ControladorEspecialidad(especialidad,vista);
@@ -67,7 +94,7 @@ public class MenuPrincipalGUI extends JFrame{
         itemCatedratico.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("\n----------- Catedraticos registrados ---------");
+                System.out.println("\n----------- Catedraticos ---------");
                 Catedratico alumno = new Catedratico();
                 VistaCatedratico vista = new VistaCatedratico();
                 ControladorCatedratico controladorc = new ControladorCatedratico(alumno,vista);
@@ -78,18 +105,18 @@ public class MenuPrincipalGUI extends JFrame{
         itemMateria.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("\n----------- Materias registrados ---------");
+                System.out.println("\n----------- Materias ---------");
                 Materia materia = new Materia();
                 VistaMateria vista = new VistaMateria();
                 ControladorMateria controlador = new ControladorMateria(materia,vista);
             }
         });
 
-        menuPrincipal.add(itemGrupo);
         menuPrincipal.add(itemAlumno);
-        menuPrincipal.add(itemEspecialidad);
         menuPrincipal.add(itemCatedratico);
+        menuPrincipal.add(itemEspecialidad);
         menuPrincipal.add(itemMateria);
+        menuPrincipal.add(nuevo);
 
         barraMenu.add(menuPrincipal);
         this.setJMenuBar(barraMenu);
@@ -97,4 +124,5 @@ public class MenuPrincipalGUI extends JFrame{
         setVisible(true);
 
     }
+
 }

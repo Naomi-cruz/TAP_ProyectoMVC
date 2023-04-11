@@ -9,14 +9,17 @@ public class Grupo {
     private Catedratico catedratico;
     private int hora;
     private int salon;
-    Alumno alumnos[];
+    //public Alumno[] alumnos;
+    public static ArrayList<Alumno> alumnosgrupo = new ArrayList<Alumno>();
 
     public Grupo() {
     }
-    public Grupo(String clave, int hora, int salon){
+    public Grupo(String clave, int hora, int salon, Materia materia, Catedratico catedratico){
         this.clave = clave;
         this.hora = hora;
         this.salon = salon;
+        this.materia = materia;
+        this.catedratico = catedratico;
     }
     public String getClave() {
         return clave;
@@ -41,7 +44,7 @@ public class Grupo {
 
     @Override
     public String toString(){
-        return "Grupo{"+"clave= "+clave+",hora="+hora+",salon="+salon+'}';
+        return "Grupo -> {"+"Clave = "+clave+", Hora = "+hora+", Salon = "+salon+", "+materia+", "+catedratico+"}\nAlumnos: \n"+alumnosgrupo+'}';
     }
     public void imprimir(){
         System.out.println(toString());
@@ -63,11 +66,55 @@ public class Grupo {
         return false;
     }
 
+    public static boolean buscarAlumno(int n_id) {
+        String id = String.valueOf(n_id);
+        for (Alumno esp : alumnosgrupo) {
+            if (String.valueOf(esp.getNumControl()).equals(id))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public Catedratico getCatedratico() {
         return catedratico;
     }
 
     public void setCatedratico(Catedratico catedratico) {
         this.catedratico = catedratico;
+    }
+
+    public Materia getMateria() {
+        return materia;
+    }
+
+    public void setMateria(Materia materia) {
+        this.materia = materia;
+    }
+
+    public static boolean validarGrupoclave(String n_rfc) {
+        for (Grupo gru : grupos ) {
+            if (gru.getClave().equals(n_rfc))
+            {
+                //System.out.println("Este id ya existe: " + esp.getId());
+                return true;
+            }else{
+                //System.out.println("Este id aun no existe");
+                return false;
+            }
+        }
+        return false;
+    }
+
+        public static Grupo busquedaGrupo(String clave) {
+        Grupo resultado = null;
+        for (Grupo grup : grupos) {
+            if (grup.getClave().equals(clave)) {
+                resultado = grup;
+                break;
+            }
+        }
+        return resultado;
     }
 }

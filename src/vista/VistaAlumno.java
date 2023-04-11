@@ -20,7 +20,7 @@ public class VistaAlumno extends JFrame{
     public VistaAlumno(){
         setTitle("Alumnos");
         setContentPane(panelPrincipal);
-        setSize(500,140);
+        setSize(500,160);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setVisible(true);

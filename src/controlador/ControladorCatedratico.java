@@ -1,5 +1,6 @@
 package controlador;
 
+import modelo.Alumno;
 import modelo.Catedratico;
 import modelo.Grupo;
 import vista.VistaCatedratico;
@@ -9,9 +10,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import static modelo.Catedratico.catedraticos;
+
 
 public class ControladorCatedratico implements ActionListener {
-    public static ArrayList<Catedratico> catedraticos = new ArrayList<Catedratico>();
 
     private final Catedratico catedratico;
     private final VistaCatedratico vista;
@@ -30,23 +32,26 @@ public class ControladorCatedratico implements ActionListener {
             limpiar();
         }
 
-        if (this.vista.guardarButton == e.getSource()){
-            catedratico.setNombre(vista.txfNombre.getText());
-            catedratico.setRFC(vista.txfFRC.getText());
+        if (this.vista.guardarButton == e.getSource()) {
+            if (vista.txfFRC.getText().isEmpty() || vista.txfNombre.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(vista, "Ingresa valores en todos los campos", "Accion invalida", 0);
+            } else {
+                if (Catedratico.validarCatedraticoRFC(vista.txfFRC.getText()) == false) {
+                    catedratico.setNombre(vista.txfNombre.getText());
+                    catedratico.setRFC(vista.txfFRC.getText());
 
-            String RFC = vista.txfFRC.getText();
-            String nombre = vista.txfNombre.getText();
-            catedraticos.add(new Catedratico(RFC,nombre));
-            System.out.println(catedratico);
+                    String RFC = vista.txfFRC.getText();
+                    String nombre = vista.txfNombre.getText();
+                    catedraticos.add(new Catedratico(RFC, nombre));
+                    System.out.println(catedratico);
+                } else {
+                    JOptionPane.showMessageDialog(vista, "El catedratico ya se encuentra registrado", "Accion invalida", 0);
+                }
+            }
         }
 
         if (this.vista.salirButton == e.getSource()){
             salir();
-        }
-
-        if (this.vista.menuButton == e.getSource()){
-            vista.dispose();
-
         }
 
     }

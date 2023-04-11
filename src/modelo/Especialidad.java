@@ -32,20 +32,28 @@ public class Especialidad {
         for (Especialidad esp : especialidades) {
             if (String.valueOf(esp.getId()).equals(id))
             {
-                //System.out.println("Este id ya existe: " + esp.getId());
                 return true;
-            }else{
-                //System.out.println("Este id aun no existe");
-                return false;
             }
         }
         return false;
+    }
+
+    public static Especialidad busquedaEspecialidad(int id_espe) {
+        String n_id = String.valueOf(id_espe);
+        Especialidad resultado = null;
+        for (Especialidad espe : especialidades) {
+            if (String.valueOf(espe.getId()).equals(n_id)) {
+                resultado = espe;
+                break;
+            }
+        }
+        return resultado;
     }
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
     public String toString(){
-        return "Especialidad{"+"id = "+id+", Nombre = "+nombre+"}";
+        return "Especialidad -> {"+"id = "+id+", Nombre = "+nombre+"}";
     }
     public void imprimir(){
         System.out.println(toString());

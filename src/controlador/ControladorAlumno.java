@@ -22,10 +22,7 @@ public class ControladorAlumno implements ActionListener {
         this.vista.guardarButton.addActionListener(this);
         this.vista.limpiarButton.addActionListener(this);
         this.vista.salirButton.addActionListener(this);
-
-
     }
-
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -34,17 +31,32 @@ public class ControladorAlumno implements ActionListener {
         }
 
         if (this.vista.guardarButton == e.getSource()){
-            if (Alumno.buscarAlumnonumdecontrol(Integer.parseInt(vista.txfNumecontrol.getText())) == false) {
-                alumno.setNumControl(Integer.parseInt(vista.txfNumecontrol.getText()));
-                alumno.setNombre((vista.txfNumecontrol.getText()));
-                alumno.setEspecialidad(Integer.parseInt(vista.txfEspecialidad.getText()));
-                int numControl = Integer.parseInt(vista.txfNumecontrol.getText());
-                String nombre = vista.txfNombre.getText();
-                int idEspecialidad = Integer.parseInt(vista.txfEspecialidad.getText());
-                alumnos.add(new Alumno(numControl, nombre, idEspecialidad));
-                System.out.println(alumno);
-            } else {
-                JOptionPane.showMessageDialog(vista,"Este numero de control ya le pertenece a alguien mas","Accion invalida",0);
+            if (vista.txfEspecialidad.getText().length() == 0 || vista.txfNumecontrol.getText().length() == 0 || vista.txfNombre.getText().length() == 0 ) {
+                JOptionPane.showMessageDialog(vista, "Ingresa valores en los campos", "Accion invalida", 0);
+            }
+            else {
+                try {
+                    if (Alumno.validarAlumnonumdecontrol(Integer.parseInt(vista.txfNumecontrol.getText())) == true) {
+                        JOptionPane.showMessageDialog(vista, "Este numero de control ya le pertenece a alguien mas", "Accion invalida", 0);
+                    } else {
+                        if (Especialidad.buscarEspecialidadID(Integer.parseInt(vista.txfEspecialidad.getText())) == true) {
+                            int numControl = Integer.parseInt(vista.txfNumecontrol.getText());
+                            String nombre = vista.txfNombre.getText();
+                            Especialidad id = Especialidad.busquedaEspecialidad(Integer.parseInt(vista.txfEspecialidad.getText()));
+
+                            alumno.setEspecialidad(id);
+                            alumno.setNumControl(numControl);
+                            alumno.setNombre(nombre);
+                            alumnos.add(new Alumno(numControl, nombre, id));
+                            System.out.println(alumno);
+
+                        } else {
+                            JOptionPane.showMessageDialog(vista, "Especialidad invalida", "Accion invalida", 0);
+                        }
+                    }
+                } catch (NumberFormatException error) {
+                    System.out.println("\nIngresa valores numericos en los id's");
+                }
             }
         }
 

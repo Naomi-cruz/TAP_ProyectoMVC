@@ -5,20 +5,22 @@
       <xy x="20" y="20" width="500" height="400"/>
     </constraints>
     <properties>
-      <background color="-16777216"/>
+      <background color="-460552"/>
       <foreground color="-460552"/>
     </properties>
     <border type="none"/>
     <children>
-      <grid id="a1415" binding="panelSur" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+      <grid id="a1415" binding="panelSur" layout-manager="FlowLayout" hgap="5" vgap="10" flow-align="1">
         <constraints border-constraint="South"/>
-        <properties/>
+        <properties>
+          <background color="-16113054"/>
+        </properties>
         <border type="none"/>
         <children>
           <component id="67e9f" class="javax.swing.JButton" binding="salirButton" default-binding="true">
             <constraints/>
             <properties>
-              <background color="-16731920"/>
+              <background color="-460552"/>
               <foreground color="-16777216"/>
               <text value="Salir"/>
             </properties>
@@ -26,6 +28,7 @@
           <component id="13645" class="javax.swing.JButton" binding="mostrarButton" default-binding="true">
             <constraints/>
             <properties>
+              <background color="-460552"/>
               <text value="Mostrar"/>
             </properties>
           </component>
@@ -33,7 +36,9 @@
       </grid>
       <grid id="d9bc7" binding="panelCentral" layout-manager="BorderLayout" hgap="0" vgap="0">
         <constraints border-constraint="Center"/>
-        <properties/>
+        <properties>
+          <background color="-460552"/>
+        </properties>
         <border type="none"/>
         <children/>
       </grid>

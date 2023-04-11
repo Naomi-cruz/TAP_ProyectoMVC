@@ -18,7 +18,7 @@ public class VistaMateria extends JFrame {
     public VistaMateria(){
         setTitle("Materias");
         setContentPane(panelPrincipal);
-        setSize(500,160);
+        setSize(300,160);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setVisible(true);

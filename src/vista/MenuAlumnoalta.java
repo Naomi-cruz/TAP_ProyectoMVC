@@ -2,23 +2,21 @@ package vista;
 
 import javax.swing.*;
 
-public class VistaEspecialidad extends JFrame{
+public class MenuAlumnoalta extends JFrame{
     private JPanel panelPrincipal;
     private JPanel panelNorte;
     private JPanel panelSur;
-    private JPanel panelCentro;
-    public JButton guardarButton;
+    private JPanel panelCentral;
+    public JTextField txfnumcontrol;
+    public JTextField txfclaveclase;
+    public JButton agregarButton;
     public JButton limpiarButton;
     public JButton salirButton;
-    public JTextField txfId;
-    private JLabel lblaidi;
-    public JTextField jtfEspecialidad;
-    private JLabel lblEspecialidad;
 
-    public VistaEspecialidad(){
-        setTitle("Especialidades");
+    public MenuAlumnoalta(){
+        setTitle("Alumnos");
         setContentPane(panelPrincipal);
-        setSize(400,160);
+        setSize(300,170);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setVisible(true);

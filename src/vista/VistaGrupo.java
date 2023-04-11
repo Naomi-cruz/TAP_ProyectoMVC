@@ -1,6 +1,7 @@
 package vista;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class VistaGrupo extends JFrame{
     private JPanel panelPrincipal;
@@ -16,11 +17,14 @@ public class VistaGrupo extends JFrame{
     public JButton salirButton;
     private JPanel panelSur;
     private JPanel panelCentral;
+    public JTextField txfidMateria;
+    private JLabel lblMateria;
+    public JTextField txfrfc;
 
     public VistaGrupo(){
         setTitle("Grupo");
         setContentPane(panelPrincipal);
-        setSize(500,160);
+        setSize(500,170);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setVisible(true);

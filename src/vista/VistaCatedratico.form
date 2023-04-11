@@ -21,7 +21,7 @@
           <component id="a1051" class="javax.swing.JTextField" binding="txfFRC">
             <constraints/>
             <properties>
-              <columns value="15"/>
+              <columns value="10"/>
             </properties>
           </component>
         </children>
@@ -41,12 +41,6 @@
             <constraints/>
             <properties>
               <text value="Limpiar"/>
-            </properties>
-          </component>
-          <component id="aae50" class="javax.swing.JButton" binding="menuButton" default-binding="true">
-            <constraints/>
-            <properties>
-              <text value="Menu"/>
             </properties>
           </component>
           <component id="36b4c" class="javax.swing.JButton" binding="salirButton" default-binding="true">

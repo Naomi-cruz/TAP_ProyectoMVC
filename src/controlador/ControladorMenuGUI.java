@@ -6,9 +6,8 @@ import vista.MenuPrincipalGUI;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import static controlador.ControladorCatedratico.catedraticos;
-
 import static modelo.Alumno.alumnos;
+import static modelo.Catedratico.catedraticos;
 import static modelo.Especialidad.especialidades;
 import static modelo.Grupo.grupos;
 import static modelo.Materia.materias;

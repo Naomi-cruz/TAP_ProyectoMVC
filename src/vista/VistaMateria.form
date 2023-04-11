@@ -7,7 +7,7 @@
     <properties/>
     <border type="none"/>
     <children>
-      <grid id="f9832" binding="panelNorte" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+      <grid id="f9832" binding="panelNorte" layout-manager="FlowLayout" hgap="5" vgap="10" flow-align="1">
         <constraints border-constraint="North"/>
         <properties/>
         <border type="none"/>

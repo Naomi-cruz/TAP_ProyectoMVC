@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="vista.VistaEspecialidad">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="vista.MenuAlumnoalta">
   <grid id="27dc6" binding="panelPrincipal" layout-manager="BorderLayout" hgap="0" vgap="0">
     <constraints>
       <xy x="20" y="20" width="500" height="400"/>
@@ -7,43 +7,43 @@
     <properties/>
     <border type="none"/>
     <children>
-      <grid id="1446a" binding="panelNorte" layout-manager="FlowLayout" hgap="5" vgap="10" flow-align="1">
+      <grid id="e43b7" binding="panelNorte" layout-manager="FlowLayout" hgap="5" vgap="10" flow-align="1">
         <constraints border-constraint="North"/>
         <properties/>
         <border type="none"/>
         <children>
-          <component id="678ea" class="javax.swing.JLabel" binding="lblaidi">
+          <component id="227e4" class="javax.swing.JLabel">
             <constraints/>
             <properties>
-              <text value="id de la especialidad: "/>
+              <text value="Numero de control:"/>
             </properties>
           </component>
-          <component id="41345" class="javax.swing.JTextField" binding="txfId">
+          <component id="b06cb" class="javax.swing.JTextField" binding="txfnumcontrol">
             <constraints/>
             <properties>
-              <columns value="5"/>
+              <columns value="6"/>
             </properties>
           </component>
         </children>
       </grid>
-      <grid id="1ad38" binding="panelSur" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+      <grid id="1b357" binding="panelSur" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
         <constraints border-constraint="South"/>
         <properties/>
         <border type="none"/>
         <children>
-          <component id="bfcf9" class="javax.swing.JButton" binding="guardarButton" default-binding="true">
+          <component id="100f" class="javax.swing.JButton" binding="agregarButton" default-binding="true">
             <constraints/>
             <properties>
-              <text value="Guardar"/>
+              <text value="Agregar"/>
             </properties>
           </component>
-          <component id="22976" class="javax.swing.JButton" binding="limpiarButton" default-binding="true">
+          <component id="150c" class="javax.swing.JButton" binding="limpiarButton" default-binding="true">
             <constraints/>
             <properties>
               <text value="Limpiar"/>
             </properties>
           </component>
-          <component id="eacac" class="javax.swing.JButton" binding="salirButton" default-binding="true">
+          <component id="ee9e6" class="javax.swing.JButton" binding="salirButton" default-binding="true">
             <constraints/>
             <properties>
               <text value="Salir"/>
@@ -51,21 +51,21 @@
           </component>
         </children>
       </grid>
-      <grid id="21366" binding="panelCentro" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+      <grid id="25454" binding="panelCentral" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
         <constraints border-constraint="Center"/>
         <properties/>
         <border type="none"/>
         <children>
-          <component id="65260" class="javax.swing.JLabel" binding="lblEspecialidad">
+          <component id="64d6c" class="javax.swing.JLabel">
             <constraints/>
             <properties>
-              <text value="Nombre de la especialidad:"/>
+              <text value="Clave de la clase:"/>
             </properties>
           </component>
-          <component id="30025" class="javax.swing.JTextField" binding="jtfEspecialidad">
+          <component id="5528" class="javax.swing.JTextField" binding="txfclaveclase">
             <constraints/>
             <properties>
-              <columns value="15"/>
+              <columns value="7"/>
             </properties>
           </component>
         </children>

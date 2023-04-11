@@ -11,7 +11,6 @@ public class VistaCatedratico extends JFrame {
     public JButton guardarButton;
     public JButton limpiarButton;
     public JButton salirButton;
-    public JButton menuButton;
     public JTextField txfNombre;
     private JLabel lblNombre;
     private JLabel lblRFC;
@@ -19,7 +18,7 @@ public class VistaCatedratico extends JFrame {
     public VistaCatedratico(){
         setTitle("Catedratico");
         setContentPane(panelPrincipal);
-        setSize(500,140);
+        setSize(300,160);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setVisible(true);

@@ -7,7 +7,7 @@
     <properties/>
     <border type="none"/>
     <children>
-      <grid id="4cf2b" binding="panelNorte" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+      <grid id="4cf2b" binding="panelNorte" layout-manager="FlowLayout" hgap="5" vgap="15" flow-align="1">
         <constraints border-constraint="North"/>
         <properties/>
         <border type="none"/>
@@ -21,7 +21,7 @@
           <component id="8d393" class="javax.swing.JTextField" binding="txfNumecontrol">
             <constraints/>
             <properties>
-              <columns value="10"/>
+              <columns value="9"/>
             </properties>
           </component>
           <component id="2a92" class="javax.swing.JLabel" binding="lblEspecialidad">

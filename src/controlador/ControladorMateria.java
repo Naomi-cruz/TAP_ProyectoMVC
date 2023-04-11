@@ -29,26 +29,34 @@ public class ControladorMateria implements ActionListener {
         if(this.vista.limpiarButton == e.getSource()){
             limpiar();
         }
-        if (this.vista.guardarButton == e.getSource()){
-            if (Materia.buscarMateriaID(Integer.parseInt(vista.txfid.getText())) == false) {
 
-                materia.setId_materia(Integer.parseInt(vista.txfid.getText()));
-                materia.setNombre(vista.txfMateria.getText());
-
-                int id = Integer.parseInt(vista.txfid.getText());
-                String nombre = vista.txfMateria.getText();
-
-                materias.add(new Materia(id, nombre));
-                System.out.println(materia);
+        if (this.vista.guardarButton == e.getSource()) {
+            if (vista.txfid.getText().isEmpty() || vista.txfMateria.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(vista, "Ingresa valores en todos los campos", "Accion invalida", 0);
             } else {
-                JOptionPane.showMessageDialog(vista,"El id ya esta asociado a otra materia","Accion invalida",0);
+                try {
+                    if (Materia.validarMateriaID(Integer.parseInt(vista.txfid.getText())) == false) {
+
+                        materia.setId_materia(Integer.parseInt(vista.txfid.getText()));
+                        materia.setNombre(vista.txfMateria.getText());
+
+                        int id = Integer.parseInt(vista.txfid.getText());
+                        String nombre = vista.txfMateria.getText();
+
+                        materias.add(new Materia(id, nombre));
+                        System.out.println(materia);
+                    } else {
+                        JOptionPane.showMessageDialog(vista, "El id ya esta asociado a otra materia", "Accion invalida", 0);
+                    }
+                } catch (NumberFormatException error) {
+                    System.out.println("\nIngresa valores numericos en el id");
+                }
             }
         }
 
         if (this.vista.salirButton == e.getSource()){
             salir();
         }
-
     }
 
     public void limpiar(){

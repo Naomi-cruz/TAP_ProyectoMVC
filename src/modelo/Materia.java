@@ -34,21 +34,29 @@ public class Materia {
 
     @Override
     public String toString(){
-        return "Materia{" + "Id: "+ id_materia+ ", nombre: "+ nombre + "}";
+        return "Materia -> {" + "Id: "+ id_materia+ ", Nombre: "+ nombre + "}";
     }
 
-    public static boolean buscarMateriaID(int n_id) {
+    public static boolean validarMateriaID(int n_id) {
         String id = String.valueOf(n_id);
         for (Materia mat : materias) {
             if (String.valueOf(mat.getId_materia()).equals(id))
             {
-                //System.out.println("Este id ya existe: " + esp.getId());
                 return true;
-            }else{
-                //System.out.println("Este id aun no existe");
-                return false;
             }
         }
         return false;
+    }
+
+    public static Materia busquedaMateria(int id_Demateria) {
+        String id_nuevo = String.valueOf(id_Demateria);
+        Materia resultado = null;
+        for (Materia mate : materias) {
+            if (String.valueOf(mate.getId_materia()).equals(id_nuevo)) {
+                resultado = mate;
+                break;
+            }
+        }
+        return resultado;
     }
 }
