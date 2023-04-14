@@ -10,6 +10,8 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import static modelo.Grupo.asignarAlumno;
+
 public class ControladorMenuAlumnoalta implements ActionListener {
     public final MenuAlumnoalta vista;
 
@@ -43,9 +45,11 @@ public class ControladorMenuAlumnoalta implements ActionListener {
                     if (Grupo.validarGrupoclave(vista.txfclaveclase.getText()) == false && Alumno.validarAlumnonumdecontrol(Integer.parseInt(vista.txfnumcontrol.getText())) == false) {
                         JOptionPane.showMessageDialog(vista, "Datos no encontrados", "Accion invalida", 0);
                     } else {
-                        if (Grupo.buscarAlumno(Integer.parseInt(vista.txfnumcontrol.getText()))) {
-                            Alumno nuevoAlum = Alumno.busquedaAlumno(Integer.parseInt(vista.txfnumcontrol.getText()));
-                            Grupo.alumnosgrupo.add(nuevoAlum);
+                        if (Grupo.buscarAlumno(Integer.parseInt(vista.txfnumcontrol.getText())) == false) {
+                            String clave = vista.txfclaveclase.getText();
+                            int num_control = Integer.parseInt(vista.txfnumcontrol.getText());
+                            asignarAlumno(clave,num_control);
+                            System.out.println("\nAlumno asignado a la clase "+clave);
                         } else {
                             JOptionPane.showMessageDialog(vista, "El alumno ya se encuentra en la clase", "Accion invalida", 0);
 

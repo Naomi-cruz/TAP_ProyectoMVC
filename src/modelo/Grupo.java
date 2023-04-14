@@ -9,8 +9,8 @@ public class Grupo {
     private Catedratico catedratico;
     private int hora;
     private int salon;
-    //public Alumno[] alumnos;
-    public static ArrayList<Alumno> alumnosgrupo = new ArrayList<Alumno>();
+    //private Alumno[] alumnos;
+    private static ArrayList<Alumno> alumnosgrupo = new ArrayList<Alumno>();
 
     public Grupo() {
     }
@@ -50,17 +50,13 @@ public class Grupo {
         System.out.println(toString());
     }
 
-    public static boolean buscarGrupo(int n_salon, int s_hora) {
+    public static boolean salonDisponible(int n_salon, int s_hora) {
         String num_salon = String.valueOf(n_salon);
         String horario = String.valueOf(s_hora);
         for (Grupo grup : grupos) {
             if (String.valueOf(grup.getHora()).equals(horario) && String.valueOf(grup.getSalon()).equals(num_salon))
             {
-                //System.out.println("Este id ya existe: " + esp.getId());
                 return true;
-            }else{
-                //System.out.println("Este id aun no existe");
-                return false;
             }
         }
         return false;
@@ -75,6 +71,33 @@ public class Grupo {
             }
         }
         return false;
+    }
+
+    public static boolean validarGrupoclave(String n_clave) {
+        for (Grupo gru : grupos ) {
+            if (gru.getClave().equals(n_clave))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static Grupo buscarGrupo(String clave_grupo) {
+        Grupo resultado = null;
+        for (Grupo grup : grupos) {
+            if (grup.getClave().equals(clave_grupo)) {
+                resultado = grup;
+                break;
+            }
+        }
+        return resultado;
+    }
+
+    public static void asignarAlumno(String clave_grupo, int num_control) {
+        if (validarGrupoclave(clave_grupo) == true){
+            buscarGrupo(clave_grupo).alumnosgrupo.add(Alumno.busquedaAlumno(num_control));
+        }
     }
 
     public Catedratico getCatedratico() {
@@ -93,28 +116,4 @@ public class Grupo {
         this.materia = materia;
     }
 
-    public static boolean validarGrupoclave(String n_rfc) {
-        for (Grupo gru : grupos ) {
-            if (gru.getClave().equals(n_rfc))
-            {
-                //System.out.println("Este id ya existe: " + esp.getId());
-                return true;
-            }else{
-                //System.out.println("Este id aun no existe");
-                return false;
-            }
-        }
-        return false;
-    }
-
-        public static Grupo busquedaGrupo(String clave) {
-        Grupo resultado = null;
-        for (Grupo grup : grupos) {
-            if (grup.getClave().equals(clave)) {
-                resultado = grup;
-                break;
-            }
-        }
-        return resultado;
-    }
 }

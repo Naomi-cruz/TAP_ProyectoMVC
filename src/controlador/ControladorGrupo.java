@@ -34,28 +34,33 @@ public class ControladorGrupo implements ActionListener {
                 JOptionPane.showMessageDialog(vista, "Ingresa valores en todos los campos", "Accion invalida", 0);
             } else {
                 try {
-                    if (Grupo.buscarGrupo(Integer.parseInt(vista.txfSalon.getText()), Integer.parseInt(vista.txfHora.getText())) == false && Materia.validarMateriaID(Integer.parseInt(vista.txfidMateria.getText())) == true && Catedratico.validarCatedraticoRFC(vista.txfrfc.getText()) == true) {
-
-                        String clave = vista.txfClave.getText();
-                        int hora = Integer.parseInt(vista.txfHora.getText());
-                        int salon = Integer.parseInt(vista.txfSalon.getText());
-                        Materia m = Materia.busquedaMateria(Integer.parseInt(vista.txfidMateria.getText()));
-                        Catedratico c = Catedratico.busquedaCatedratico(vista.txfrfc.getText());
-
-                        grupo.setHora(hora);
-                        grupo.setMateria(m);
-                        grupo.setClave(clave);
-                        grupo.setSalon(salon);
-                        grupo.setCatedratico(c);
-                        System.out.println(grupo);
-
-                        grupos.add(new Grupo(clave, hora, salon, m, c));
+                    if (Grupo.validarGrupoclave(vista.txfClave.getText()) == true) {
+                        JOptionPane.showMessageDialog(vista, "Grupo ya existente", "Accion invalida", 0);
                     } else {
-                        JOptionPane.showMessageDialog(vista, "Parametros no validos", "Accion invalida", 0);
+                        if (Grupo.salonDisponible(Integer.parseInt(vista.txfSalon.getText()), Integer.parseInt(vista.txfHora.getText())) == false && Materia.validarMateriaID(Integer.parseInt(vista.txfidMateria.getText())) == true && Catedratico.validarCatedraticoRFC(vista.txfrfc.getText()) == true) {
+
+                            String clave = vista.txfClave.getText();
+                            int hora = Integer.parseInt(vista.txfHora.getText());
+                            int salon = Integer.parseInt(vista.txfSalon.getText());
+                            Materia m = Materia.busquedaMateria(Integer.parseInt(vista.txfidMateria.getText()));
+                            Catedratico c = Catedratico.busquedaCatedratico(vista.txfrfc.getText());
+
+                            grupo.setHora(hora);
+                            grupo.setMateria(m);
+                            grupo.setClave(clave);
+                            grupo.setSalon(salon);
+                            grupo.setCatedratico(c);
+                            System.out.println(grupo);
+
+                            grupos.add(new Grupo(clave, hora, salon, m, c));
+                        } else {
+                            JOptionPane.showMessageDialog(vista, "Parametros no validos", "Accion invalida", 0);
+                        }
                     }
-                } catch (NumberFormatException error) {
-                    System.out.println("\nIngresa valores numericos en los lugares correspondientes");
+                    } catch(NumberFormatException error){
+                        System.out.println("\nIngresa valores numericos en los lugares correspondientes");
                 }
+
             }
         }
 

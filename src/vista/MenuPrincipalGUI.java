@@ -1,6 +1,8 @@
 package vista;
 
 import javax.swing.*;
+import javax.swing.border.Border;
+
 import controlador.*;
 import modelo.*;
 
@@ -28,6 +30,9 @@ public class MenuPrincipalGUI extends JFrame{
     private JMenuItem itemDardealta;
     private JMenu grupo;
 
+    //experimento
+
+
    public MenuPrincipalGUI() {
         super("BD: Proyecto Escolar");
 
@@ -36,11 +41,12 @@ public class MenuPrincipalGUI extends JFrame{
         setSize(300, 260);
         setLocation(500, 250);
 
-
-
         barraMenu = new JMenuBar();
         menuPrincipal = new JMenu("-Opciones de registro-");
-        menuPrincipal.setBackground(Color.blue);
+
+        barraMenu.setBackground(Color.ORANGE);
+        //173,215,239
+
 
         itemGrupo = new JMenuItem("Grupo alta");
         nuevo = new JMenu("Grupo");
