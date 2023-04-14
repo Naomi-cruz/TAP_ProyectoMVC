@@ -23,6 +23,7 @@ public class VistaAlumno extends JFrame{
         setSize(500,160);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setResizable(false);
         setVisible(true);
     }
 
