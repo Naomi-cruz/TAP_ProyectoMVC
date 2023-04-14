@@ -44,7 +44,9 @@ public class MenuPrincipalGUI extends JFrame{
         barraMenu = new JMenuBar();
         menuPrincipal = new JMenu("-Opciones de registro-");
 
-        barraMenu.setBackground(Color.ORANGE);
+       barraMenu.setBackground(Color.GRAY);
+       menuPrincipal.setFont(new Font("Britannic Bold", 1,15));
+       menuPrincipal.setForeground(Color.WHITE);
         //173,215,239
 
 

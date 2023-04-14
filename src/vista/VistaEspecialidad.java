@@ -21,6 +21,7 @@ public class VistaEspecialidad extends JFrame{
         setSize(400,160);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setResizable(false);
         setVisible(true);
     }
 }

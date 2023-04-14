@@ -27,6 +27,7 @@ public class VistaGrupo extends JFrame{
         setSize(500,170);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setResizable(false);
         setVisible(true);
     }
 }

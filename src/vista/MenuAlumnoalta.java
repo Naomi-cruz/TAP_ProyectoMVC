@@ -19,6 +19,7 @@ public class MenuAlumnoalta extends JFrame{
         setSize(300,170);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setResizable(false);
         setVisible(true);
     }
 }
