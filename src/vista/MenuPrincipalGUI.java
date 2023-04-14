@@ -40,12 +40,13 @@ public class MenuPrincipalGUI extends JFrame{
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(300, 260);
         setLocation(500, 250);
+        setResizable(false);
 
         barraMenu = new JMenuBar();
         menuPrincipal = new JMenu("-Opciones de registro-");
 
        barraMenu.setBackground(Color.GRAY);
-       menuPrincipal.setFont(new Font("Britannic Bold", 1,15));
+       menuPrincipal.setFont(new Font("Tw Cent MT", 1,13));
        menuPrincipal.setForeground(Color.WHITE);
         //173,215,239
 
