@@ -110,10 +110,19 @@
               <text value="Nombre del alumno:"/>
             </properties>
           </component>
+          <hspacer id="82bb8">
+            <constraints/>
+          </hspacer>
+          <hspacer id="14fce">
+            <constraints/>
+          </hspacer>
+          <hspacer id="1e4b2">
+            <constraints/>
+          </hspacer>
           <component id="869f5" class="javax.swing.JTextField" binding="txfNombre">
             <constraints/>
             <properties>
-              <columns value="25"/>
+              <columns value="24"/>
               <font name="Arial Narrow"/>
             </properties>
           </component>

@@ -31,6 +31,18 @@
               <font name="Arial Narrow"/>
             </properties>
           </component>
+          <hspacer id="86a30">
+            <constraints/>
+          </hspacer>
+          <hspacer id="c5aed">
+            <constraints/>
+          </hspacer>
+          <hspacer id="188fc">
+            <constraints/>
+          </hspacer>
+          <hspacer id="1114c">
+            <constraints/>
+          </hspacer>
           <component id="865a3" class="javax.swing.JLabel" binding="lblMateria">
             <constraints/>
             <properties>
@@ -39,6 +51,9 @@
               <text value="id de la materia:"/>
             </properties>
           </component>
+          <hspacer id="566f4">
+            <constraints/>
+          </hspacer>
           <component id="a9c47" class="javax.swing.JTextField" binding="txfidMateria">
             <constraints/>
             <properties>
@@ -96,7 +111,7 @@
             <properties>
               <font name="Arial Narrow"/>
               <foreground color="-15719615"/>
-              <text value="Hora"/>
+              <text value="Hora:"/>
             </properties>
           </component>
           <component id="aa02c" class="javax.swing.JTextField" binding="txfHora">
@@ -111,7 +126,7 @@
             <properties>
               <font name="Arial Narrow"/>
               <foreground color="-15719615"/>
-              <text value="Salon"/>
+              <text value="Salón:"/>
             </properties>
           </component>
           <component id="dd0ca" class="javax.swing.JTextField" binding="txfSalon" default-binding="true">
@@ -126,7 +141,7 @@
             <properties>
               <font name="Arial Narrow"/>
               <foreground color="-15719615"/>
-              <text value="RFC del catedratico: "/>
+              <text value="RFC del catedrático: "/>
             </properties>
           </component>
           <component id="35033" class="javax.swing.JTextField" binding="txfrfc" default-binding="true">

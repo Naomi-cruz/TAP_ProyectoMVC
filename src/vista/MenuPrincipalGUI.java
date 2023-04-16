@@ -76,7 +76,7 @@ public class MenuPrincipalGUI extends JFrame{
             }
         });
 
-        itemDardealta = new JMenuItem("Asignacion alumno");
+        itemDardealta = new JMenuItem("Asignación alumno");
         nuevo.add(itemDardealta);
 
        itemDardealta.addActionListener(new ActionListener() {
@@ -99,11 +99,11 @@ public class MenuPrincipalGUI extends JFrame{
             }
         });
 
-        itemCatedratico = new JMenuItem("Catedratico");
+        itemCatedratico = new JMenuItem("Catedrático");
         itemCatedratico.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("\n----------- Catedraticos ---------");
+                System.out.println("\n----------- Catedráticos ---------");
                 Catedratico alumno = new Catedratico();
                 VistaCatedratico vista = new VistaCatedratico();
                 ControladorCatedratico controladorc = new ControladorCatedratico(alumno,vista);

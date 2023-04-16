@@ -21,7 +21,7 @@
             <properties>
               <font name="Arial Narrow"/>
               <foreground color="-15719615"/>
-              <text value="Numero de control:"/>
+              <text value="Número de control:"/>
             </properties>
           </component>
           <component id="b06cb" class="javax.swing.JTextField" binding="txfnumcontrol">

@@ -24,6 +24,12 @@
               <text value="id de la especialidad: "/>
             </properties>
           </component>
+          <hspacer id="752ed">
+            <constraints/>
+          </hspacer>
+          <hspacer id="c9f2">
+            <constraints/>
+          </hspacer>
           <component id="41345" class="javax.swing.JTextField" binding="txfId">
             <constraints/>
             <properties>
@@ -31,6 +37,42 @@
               <font name="Arial Narrow"/>
             </properties>
           </component>
+          <hspacer id="2f24">
+            <constraints/>
+          </hspacer>
+          <hspacer id="3db01">
+            <constraints/>
+          </hspacer>
+          <hspacer id="6e5eb">
+            <constraints/>
+          </hspacer>
+          <hspacer id="ba223">
+            <constraints/>
+          </hspacer>
+          <hspacer id="c553b">
+            <constraints/>
+          </hspacer>
+          <hspacer id="5829a">
+            <constraints/>
+          </hspacer>
+          <hspacer id="50731">
+            <constraints/>
+          </hspacer>
+          <hspacer id="4c97c">
+            <constraints/>
+          </hspacer>
+          <hspacer id="9de39">
+            <constraints/>
+          </hspacer>
+          <hspacer id="ada78">
+            <constraints/>
+          </hspacer>
+          <hspacer id="85675">
+            <constraints/>
+          </hspacer>
+          <hspacer id="ee522">
+            <constraints/>
+          </hspacer>
         </children>
       </grid>
       <grid id="1ad38" binding="panelSur" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">

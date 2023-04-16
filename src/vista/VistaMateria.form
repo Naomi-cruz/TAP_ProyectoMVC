@@ -81,7 +81,7 @@
             <properties>
               <font name="Arial Narrow"/>
               <foreground color="-15719615"/>
-              <text value="Materia"/>
+              <text value="Materia:"/>
             </properties>
           </component>
           <component id="d929b" class="javax.swing.JTextField" binding="txfMateria">

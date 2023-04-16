@@ -24,6 +24,15 @@
               <text value="RFC: "/>
             </properties>
           </component>
+          <hspacer id="89df1">
+            <constraints/>
+          </hspacer>
+          <hspacer id="b13a">
+            <constraints/>
+          </hspacer>
+          <hspacer id="e7a71">
+            <constraints/>
+          </hspacer>
           <component id="a1051" class="javax.swing.JTextField" binding="txfFRC">
             <constraints/>
             <properties>
@@ -31,6 +40,30 @@
               <font name="Arial Narrow"/>
             </properties>
           </component>
+          <hspacer id="8b304">
+            <constraints/>
+          </hspacer>
+          <hspacer id="81161">
+            <constraints/>
+          </hspacer>
+          <hspacer id="e44fc">
+            <constraints/>
+          </hspacer>
+          <hspacer id="264f4">
+            <constraints/>
+          </hspacer>
+          <hspacer id="c42f1">
+            <constraints/>
+          </hspacer>
+          <hspacer id="8845">
+            <constraints/>
+          </hspacer>
+          <hspacer id="15069">
+            <constraints/>
+          </hspacer>
+          <hspacer id="ff8f5">
+            <constraints/>
+          </hspacer>
         </children>
       </grid>
       <grid id="6f580" binding="panelSur" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
