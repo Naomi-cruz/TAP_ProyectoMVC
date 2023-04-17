@@ -16,7 +16,7 @@ import static modelo.Especialidad.especialidades;
 public class ControladorEspecialidad implements ActionListener {
 
 
-    private final Especialidad especialidad;
+  /*  private final Especialidad especialidad;
     private final VistaEspecialidad vista;
 
     public ControladorEspecialidad(Especialidad especialidad, VistaEspecialidad vista) {
@@ -73,5 +73,5 @@ public class ControladorEspecialidad implements ActionListener {
         public void salir() {
             System.exit(0);
         }
-
+*/
 }

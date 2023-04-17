@@ -3,7 +3,7 @@ package modelo;
 import java.util.ArrayList;
 
 public class Especialidad {
-
+/*
     public static ArrayList<Especialidad> especialidades = new ArrayList<Especialidad>();
     private int id;
     private String nombre;
@@ -58,5 +58,5 @@ public class Especialidad {
     public void imprimir(){
         System.out.println(toString());
     }
-
+*/
 }

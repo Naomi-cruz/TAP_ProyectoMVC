@@ -22,23 +22,24 @@ public class ControladorMenuGUI implements ActionListener {
         this.menuGUI.salirButton.addActionListener(this);
     }
     public static void listarBD1(){
+        System.out.println("\n");
         for (int i=0; i<especialidades.size(); i++){
             System.out.println(especialidades.get(i).toString());
 
         }
-
+        System.out.println("\n");
         for (int i=0; i<alumnos.size(); i++){
             System.out.println(alumnos.get(i).toString());
         }
-
+        System.out.println("\n");
         for (int i=0; i<grupos.size(); i++){
             System.out.println(grupos.get(i).toString());
         }
-
+        System.out.println("\n");
         for (int i=0; i<catedraticos.size(); i++){
             System.out.println(catedraticos.get(i).toString());
         }
-
+        System.out.println("\n");
         for (int i=0; i<materias.size(); i++){
             System.out.println(materias.get(i).toString());
         }
